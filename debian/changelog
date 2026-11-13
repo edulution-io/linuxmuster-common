@@ -1,3 +1,23 @@
+linuxmuster-common (1:7.4.5~edu) lmn74; urgency=low
+
+  * edulution fork. The package keeps its upstream name, so the epoch 1: is
+    what makes it win against the same package from deb.linuxmuster.net.
+    A missing epoch counts as 0, so every existing versioned dependency on
+    linuxmuster-common stays satisfied.
+  * The version carries the suffix ~edu on top of the epoch, so apt policy,
+    dpkg -l and the motd show at a glance that this is the edulution build
+    and not the upstream package. "~" sorts before the empty string, so
+    1:7.4.5~edu stays below a hypothetical 1:7.4.5 while still outranking
+    every upstream 7.x, which carries no epoch at all.
+  * Release workflow publishes to edulution-io/edulution-package-server
+    instead of linuxmuster/deb, into the Ubuntu codename resolute.
+  * Depend on edulution-archive-keyring, which owns
+    /usr/share/keyrings/edulution.gpg, the keyring the sources entry for
+    package.edulution.io names. New or rotated signing keys then reach the
+    host with a regular upgrade.
+
+ -- Lukas Lukic-Spitznagel <lukas.spitznagel@netzint.de>  Fri, 13 Nov 2026 12:00:00 +0100
+
 linuxmuster-common (7.4.5) lmn74; urgency=low
 
   * keep python bytecode caches out of the package: clean lib/__pycache__ in

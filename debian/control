@@ -7,4 +7,5 @@ Standards-Version: 5.0.0
 
 Package: linuxmuster-common
 Architecture: all
+Depends: edulution-archive-keyring
 Description: linuxmuster.net common files

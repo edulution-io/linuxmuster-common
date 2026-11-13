@@ -1,3 +1,10 @@
+> [!NOTE]
+> **This is the edulution fork of [linuxmuster-common](https://github.com/linuxmuster/linuxmuster-common).**
+> We build on the great work of the linuxmuster.net community. Maintaining our own
+> fork gives us the flexibility to ship security fixes and new features to edulution
+> installations quickly, and we actively contribute our changes back to the community
+> project. The packages are published at [package.edulution.io](https://package.edulution.io).
+
 # linuxmuster-common
 Common files for linuxmuster.net (since v7.3)
 
