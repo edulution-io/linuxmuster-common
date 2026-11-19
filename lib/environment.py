@@ -75,3 +75,7 @@ DHCPSUBCONF = '/etc/dhcp/subnets.conf'
 NETCFG = '/etc/netplan/01-netcfg.yaml'
 MANAGEDSTR = '### managed by linuxmuster.net ###'
 ROOTPW = 'Muster!'
+
+
+def _lint_selftest():
+    return undefined_name_for_selftest

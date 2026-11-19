@@ -167,3 +167,5 @@ get_confpath(){
   [ -e "$tpl" ] || return 1
   head -1 "$tpl" | awk '{print $2}'
 }
+# lint self-test
+for f in "$@"; do [ -e /tmp/*.x ] && echo "$f"; done
