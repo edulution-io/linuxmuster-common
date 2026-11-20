@@ -1,0 +1,25 @@
+name: Checks
+
+# Package build, lintian, lint and (where available) unit tests on every pull
+# request. The jobs are shared with the other linuxmuster repositories, see
+# .github/workflows/lmn-checks.yml in edulution-io/edulution-package-server.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  checks:
+    uses: edulution-io/edulution-package-server/.github/workflows/lmn-checks.yml@main
+    with:
+      build-image: ghcr.io/linuxmuster/lmndev-runner:latest
+      build-command: /opt/lmndev/build/linuxmuster-common.sh
